@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Install Chrome Extension</title>
+  <style>
+    button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Install this Extension to Your Chrome Browser</h2>
+  <button id="installBtn">Install</button>
+  <script src="popup.js"></script>
+</body>
+</html>
+<script>
+  document.getElementById('installBtn').addEventListener('click', function() {
+    // Redirect to the Chrome Web Store page for the extension
+    window.open('https://chrome.google.com/webstore/detail/your-extension-id', '_blank');
+  });
+</script>
