@@ -21,8 +21,10 @@ const Header = () => {
         {/* Desktop Nav */}
         <nav className="hidden sm:flex space-x-6 font-medium text-gray-700  hover:underline">
           
-          <Link href="/">Add to Chrome
-           <Image src={ch} alt="Logo" width={60} height={60} className="inline-block mr-2" /></Link>
+          <Link href="/">Add to chrome
+           <Image src={ch} alt="Logo" width={60} height={60} 
+           
+           className="inline-block mr-2" /></Link>
         
         </nav>
 
@@ -40,7 +42,7 @@ const Header = () => {
         <div className="sm:hidden mt-2 space-y-2 text-gray-700 font-medium">
           <Link href="/" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/generate" onClick={() => setIsOpen(false)}>Generate</Link>
-          <Link href="/about" onClick={() => setIsOpen(false)}>About</Link>
+          <Link href="/about" onClick={() => setIsOpen(false)}>About</Link> 
         </div>
       )}
     </header>
