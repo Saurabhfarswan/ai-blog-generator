@@ -9,8 +9,8 @@ import GrammarEditor from '../grammar/GrammarEditor';
 import { useTheme } from 'next-themes';
 import LanguageSelector from '../languages/language';
 import Header from '../header/header';
-import { Providers } from '@/app/providers/providers';
-;
+import { ModeToggle } from '../ui/ModeToggle';
+
 
 const Home = () => {
   const [topic, setTopic] = useState('');
@@ -67,7 +67,7 @@ const Home = () => {
       `The Ultimate Guide to ${content.slice(0, 30)}`
     ];
   };
-
+ console.log(theme);
   useEffect(() => {
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto'; // Reset previous height
@@ -123,6 +123,8 @@ const Home = () => {
     <div className="flex flex-col min-h-screen items-center bg-gray-50">
       <header className="py-6 text-center w-11/12 md:w-1/2">
         <h1 className="text-3xl font-bold">AI Blog Generator</h1>
+        <ModeToggle/>
+
         {/* Dark/Light mode toggle if needed */}
       </header>
   
