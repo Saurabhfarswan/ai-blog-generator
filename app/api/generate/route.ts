@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     const { topic, wordCount, category, tone, language } = await req.json();
     
     const apiKey = process.env.OPENROUTER_API_KEY;
-    const model = process.env.OPENROUTER_MODEL || 'openai/gpt-3.5-turbo';
+    const model = process.env.OPENROUTER_MODEL;
     
     if (!apiKey) {
       console.error('Missing OPENROUTER_API_KEY');
@@ -43,7 +43,7 @@ export async function POST(req: Request) {
     const openAiResponse = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        'Authorization': `Bearer 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`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

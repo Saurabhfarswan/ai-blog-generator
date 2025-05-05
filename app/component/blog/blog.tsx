@@ -38,7 +38,7 @@ const Home = () => {
     try {
       const requestData = { topic, userPrompt, wordCount, category, tone, language };
 
-      const response = await fetch('/api/generate', {
+      const response = await fetch('api/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(requestData),
@@ -123,12 +123,15 @@ const Home = () => {
     <div className="flex flex-col min-h-screen items-center bg-gray-50">
       <header className="py-6 text-center w-11/12 md:w-1/2">
         <h1 className="text-3xl font-bold">AI Blog Generator</h1>
-        <ModeToggle/>
-
+      
         {/* Dark/Light mode toggle if needed */}
+        <div className="absolute top-4 right-4 ">
+          
+          <ModeToggle /> 
+        </div>
       </header>
   
-      <main className="flex-1 w-11/12 md:w-1/2 flex flex-col space-y-6">
+      <main className="flex-1 w-11/12 md:w-1/2 flex flex-col  space-y-6">
         <div className="bg-white p-6 rounded-xl shadow-md space-y-4">
           <h2 className="text-lg font-semibold">Enter Blog Details</h2>
   
