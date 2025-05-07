@@ -36,7 +36,8 @@ const Home = () => {
 
     setLoading(true);
     try {
-      const requestData = { topic, userPrompt, wordCount, category, tone, language };
+     const requestData = { topic: topic.trim(), userPrompt, wordCount, category, tone, language };
+
 
       const response = await fetch('api/generate', {
         method: 'POST',
@@ -59,6 +60,7 @@ const Home = () => {
     }
     setLoading(false);
   };
+  console.log(topic);
 
   const generateTitlesFromContent = (content: string) => {
     return [
